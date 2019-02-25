@@ -6,15 +6,17 @@ public class Cse360Assign2Test {
 	{
 		Calculator myCalc = new Calculator();
 		
-		myCalc.add(7);
+		myCalc.add(4);
 		myCalc.subtract(2);
-		myCalc.multiply(6);
-		myCalc.divide(3);
+		myCalc.multiply(2);
+		myCalc.add(5);
 		
 		System.out.println(myCalc.getTotal());
 		
 		myCalc.divide(0);
 		System.out.println(myCalc.getTotal());
+		
+		System.out.println(myCalc.getHistory());
 	}
 
 }

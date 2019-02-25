@@ -10,14 +10,18 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/**
 	 * This is the Constructor for the Calculator class.
 	 * It creates a new calculator object with the variable total initialized to 
-	 * 0. It has no parameters.
+	 * 0 and also initializes the history string to contain the initial
+	 * value, 0. It has no parameters.
 	 */
-	public Calculator () {
+	public Calculator () 
+	{
 		total = 0;  // not needed - included for clarity
+		history = new String("0");
 	}
 	
 	/**
@@ -25,44 +29,51 @@ public class Calculator {
 	 * 
 	 * @return total the value of the total.
 	 */
-	public int getTotal () {
+	public int getTotal () 
+	{
 		return total;
 	}
 	
 	/**
-	 * The add method adds a specified value to the calculator's total.
+	 * The add method adds a specified value to the calculator's total and 
+	 * documents this action in the history string.
 	 * 
 	 * @param value the number that is to be added to the calculator's total.
 	 */
 	public void add (int value) 
 	{	
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/**
 	 * The subtract method subtracts a specified value from the calculator's
-	 * total.
+	 * total and documents this action in the history string.
 	 * 
 	 * @param value the number that is to be subtracted from the total.
 	 */
 	public void subtract (int value) 
 	{
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
-	 * The multiply method multiplies the current total by a specified value.
+	 * The multiply method multiplies the current total by a specified value 
+	 * and documents this action in the history string.
 	 * 
 	 * @param value the number that will be multiplied by the total.
 	 */
 	public void multiply (int value) 
 	{
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/**
 	 * The divide method uses integer division to divide the total by a specified
-	 * value. If the parameter is 0, total is set to 0.
+	 * value and documents this action in the history string.
+	 * If the parameter is 0, total is set to 0.
 	 * 
 	 * @param value the number that will divide the total.
 	 */
@@ -76,15 +87,17 @@ public class Calculator {
 		{
 			total = total / value;
 		}
+		history = history + " / " + value;
 	}
 	
 	/**
 	 * The getHistory method returns a history of all calculator actions as a 
 	 * String.
 	 * 
-	 * @return the string that contains the history of all calculator actions.
+	 * @return history the string that contains the history of all calculator actions.
 	 */
-	public String getHistory () {
-		return "";
+	public String getHistory () 
+	{
+		return history;
 	}
 }
